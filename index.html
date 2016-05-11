@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="validationModule">
+<title>Field Validator</title>
+<meta charset="UTF-8">
+  
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+<body>
+  <center>
+  <header><h1>Field Validator with an Angular Custom Directive</h1></header>
+  <br>
+  <form name="testForm">
+        Name: <input type="text" placeholder="John Donut" ng-model="alphabets" name="alphabets" validation="alphabets"><br>
+        <span ng-show="testForm.alphabets.$touched && testForm.alphabets.$error.invalid">Invalid value.</span><br><br>
+        Phone: <input type="text" placeholder="04012345678" ng-model="number" name="number" validation="number"><br>
+        <span ng-show="testForm.number.$touched && testForm.number.$error.invalid">Invalid value.</span><br><br>
+        Email: <input type="text" placeholder="name@mail.com" ng-model="email" name="email" validation="email"><br>
+        <span ng-show="testForm.email.$touched && testForm.email.$error.invalid">Invalid value.</span><br><br>    
+
+    <validation-directive></validation-directive>
+    <br>
+  <br>
+  </center>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+  <script src="field-validator.js"></script>
+</body>
+</html>
